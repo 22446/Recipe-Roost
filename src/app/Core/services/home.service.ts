@@ -13,7 +13,9 @@ export class HomeService {
   }
   GetAllMealsDetails(id:string|null):Observable<any>{
     return this._httpClient.get(`${environment.baseUrl}/v1/1/lookup.php?i=${id}`)
-    
+  }
+  SearchByName(name:string):Observable<any>{
+    return this._httpClient.get(`${environment.baseUrl}/v1/1/search.php?s=${name}`)
   }
 
 }

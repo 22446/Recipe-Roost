@@ -23,7 +23,7 @@ export class IngrediantsDetailsComponent {
     })
     this._categorisDteils.getIngrediantsByName(this.nameCateg).subscribe({
       next:(res)=>{
-        this._MealsHome=res.meal
+        this._MealsHome=res.meals
       }
     })
   }

@@ -24,6 +24,7 @@
 @defer(on viewport()){
 <section class="my-5">
     <div class="container">
+    <h1 class="my-3 fw-bold">more meals to discover</h1>
     <owl-carousel-o [options]="customOptions">
         @for (item of MealDataAll; track $index) {
             <ng-template carouselSlide>

@@ -18,25 +18,10 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
- apinner=inject(NgxSpinnerService)
   SubEnd!:Subscription
   isloading:boolean=false
   name!:string
   MealData:MealsHome[]=[]
-  customOptions: OwlOptions = {
-    loop: true,
-    mouseDrag: true,
-    autoplay:true,
-    touchDrag: true,
-    pullDrag: true,
-    dots: false,
-    navSpeed: 700,
-    navText: ['', ''],
-    items:1,
-    nav:true
-
-  }
-
   customOptionsCategory: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -78,12 +63,10 @@ export class HomeComponent {
     
     this.SubEnd = this._HomeServices.GetAllMeals().subscribe({
       next:(res)=>{
-        this.apinner.show();
+        
          this.isloading=true
          this.MealData=res.meals
-         setTimeout(() => {
-          this.apinner.hide();
-     }, 3000);
+         
        }
      })
      

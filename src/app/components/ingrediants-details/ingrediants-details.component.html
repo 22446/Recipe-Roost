@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             @for (item of _MealsHome; track $index) {
-            <div class="col-lg-3 col-md-4 col-12 gy-4">
+            <div class="col-lg-3 col-md-4 col-6 gy-4">
                     <div class="card cr" [routerLink]="['/detailsMeal',item.idMeal]">
                         <img class="card-img-top" [src]="item.strMealThumb" alt="Card image cap">
                         <div class="card-body">

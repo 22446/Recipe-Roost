@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             @for (item of ingrediantsData.slice(0,20); track $index) {
-            <div class="col-lg-3 col-md-4 col-12 gy-4">
+            <div class="col-lg-3 col-md-4 col-6 gy-4">
                     <div class="card cr p-2  d-flex align-items-center"  [routerLink]="['/detailsIngerediant',item.strIngredient]">
                         <img  src="./assets/images/ingredients-.png" alt="Card image cap">
                         <div class="p-1 m-0 card-body flex-column d-flex align-items-center">

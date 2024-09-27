@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             @for (item of _CategDta; track $index) {
-            <div class="col-lg-3 col-md-4 col-12 gy-4">
+            <div class="col-lg-3 col-md-4 col-6 gy-4">
                     <div class="card cr" [routerLink]="['/CategoriesDetails',item.strCategory]">
                         <img class="card-img-top" [src]="item.strCategoryThumb" alt="Card image cap">
                         <div class="card-body">

@@ -9,18 +9,19 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { CategoriesService } from '../../Core/services/categories.service';
 import { ICategories } from '../../Core/interfaces/icategories';
 import { FormsModule } from '@angular/forms';
+import { SearchPipe } from '../../Core/pipes/search.pipe';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CarouselModule, RouterLink, MealsComponent,FormsModule],
+  imports: [CarouselModule, RouterLink, MealsComponent,FormsModule,SearchPipe],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
   SubEnd!:Subscription
   isloading:boolean=false
-  name!:string
+  name:string=""
   MealData:MealsHome[]=[]
   customOptionsCategory: OwlOptions = {
     loop: true,
@@ -77,15 +78,7 @@ export class HomeComponent {
       }
     })
    }
-   search(){
-    this._HomeServices.SearchByName(this.name).subscribe({
-      next:(res)=>{
-        console.log(res)
-        this.MealData=res.meals
-
-      }
-    })
-   }
+   
    ngOnDestroy(): void {
      return this.SubEnd.unsubscribe()
    }
